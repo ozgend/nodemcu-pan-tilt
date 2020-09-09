@@ -1,6 +1,6 @@
-# pan/tilt with nodemcu esp12-e (esp8266)
+# pan/tilt with nodemcu esp12-e (esp8266) via websocket
 
-a websocket pan/tilt controller for an esp8266 with two servos
+a websocket pan/tilt controller for an esp8266 with two servos.
 
 can be used for simple axis control such as camera tripod mount or laser turret.
 
