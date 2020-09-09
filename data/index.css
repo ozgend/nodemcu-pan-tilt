@@ -1,0 +1,54 @@
+*, .iframe * {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: lightgreen;
+    background-color: #111111;
+    border: none;
+}
+
+td {
+    min-width: 64px;
+}
+
+button {
+    display: block;
+    padding: 10px;
+    border: 1px solid #888888;
+    cursor: pointer;
+}
+
+span.value {
+    display: inline-block;
+    width: 48px;
+}
+
+iframe {
+    overflow: hidden;
+    color: white;
+    width: 180px;
+    height: 90px;
+}
+
+input[type=range] {
+    display: block;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+input[type=range][orient=vertical] {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}
+
+#axis-y {
+    height: 200px;
+    cursor: vertical-text;
+}
+
+#axis-x {
+    width: 200px;
+    cursor: text;
+}

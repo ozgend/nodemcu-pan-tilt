@@ -1,6 +1,6 @@
 # pan/tilt with nodemcu esp12-e (esp8266)
 
-a pan/tilt controller for an esp8266 with two servos
+a websocket pan/tilt controller for an esp8266 with two servos
 
 can be used for simple axis control such as camera tripod mount or laser turret.
 
@@ -12,8 +12,15 @@ can be used for simple axis control such as camera tripod mount or laser turret.
 - [`definitions.h`] update following lines with your wireless network properties
 
   ```cpp
-  char *WIFI_SSID = "ssid";
-  char *WIFI_PASS = "pass";
+  const char *WIFI_SSID = "ssid";
+  const char *WIFI_PASS = "pass";
+  ```
+
+  - [`definitions.h`] set ota credentials for esp module
+
+  ```cpp
+  const char *OTA_NAME = "ESP8266"; 
+  const char *OTA_PASS = "otapass";
   ```
 
 - [`definitions.h`] map and connect the io pins for servo motors
@@ -32,11 +39,11 @@ can be used for simple axis control such as camera tripod mount or laser turret.
   #define MAX_Y 180
   ```
 
-- set board to an `esp8266` compatible module
-- baud rate `115200`
+- set board to `esp8266` compatible module
+- set baud rate to `115200`
 - upload & go
 
 ## operating
 - find host ip of the esp8266 module 
-- go to `http://host_ip`
-- perform pan/tilt via clicking buttons or pressing keyboard arrow keys
+- go to `http://host_ip` (or mdns: http://esp8266.local)
+- perform pan/tilt via adjusting sliders or keyboard arrow keys
