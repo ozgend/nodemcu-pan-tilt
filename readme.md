@@ -8,36 +8,40 @@ can be used for simple axis control such as camera tripod mount or laser turret.
 - either get a pan/tilt module or make one with two servo motors
 - esp8266 module
 
-## running
-- [`definitions.h`] update following lines with your wireless network properties
+## setup & running
+- install arduino libraries via Arduino IDE
+  - `ESP8266` @ https://github.com/esp8266/Arduino
+  - `ArduinoWebSockets` @ https://github.com/Links2004/arduinoWebSockets
 
-  ```cpp
-  const char *WIFI_SSID = "ssid";
-  const char *WIFI_PASS = "pass";
-  ```
+- update constants in [`definitions.h`] 
 
-  - [`definitions.h`] set ota credentials for esp module
+  - set the wireless network properties
+    ```cpp
+    const char *WIFI_SSID = "ssid";
+    const char *WIFI_PASS = "pass";
+    ```
 
-  ```cpp
-  const char *OTA_NAME = "ESP8266"; 
-  const char *OTA_PASS = "otapass";
-  ```
+  - set the ota credentials for esp module
+    ```cpp
+    const char *OTA_NAME = "ESP8266"; 
+    const char *OTA_PASS = "otapass";
+    ```
 
-- [`definitions.h`] map and connect the io pins for servo motors
-  ```cpp
-  #define PIN_SERVO_X D2
-  #define PIN_SERVO_Y D3
-  ```
+  - map and connect the io pins for servo motors
+    ```cpp
+    #define PIN_SERVO_X D2
+    #define PIN_SERVO_Y D3
+    ```
 
-- [`definitions.h`] update the default, min, max rotation angles for servos
-  ```cpp
-  #define DEFAULT_X 90
-  #define DEFAULT_Y 90
-  #define MIN_X 0
-  #define MAX_X 180
-  #define MIN_Y 0
-  #define MAX_Y 180
-  ```
+  - update the min, max rotation angles for servos  
+    ```cpp
+    #define DEFAULT_X 90
+    #define DEFAULT_Y 90
+    #define MIN_X 0
+    #define MAX_X 180
+    #define MIN_Y 6
+    #define MAX_Y 180
+    ```
 
 - set board to `esp8266` compatible module
 - set baud rate to `115200`
